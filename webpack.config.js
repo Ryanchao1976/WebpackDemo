@@ -8,7 +8,7 @@ module.exports = {
     entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js',
+        filename: 'js/[name].[hash].js',
     },
     module: {
         rules: [
