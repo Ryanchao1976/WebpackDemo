@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    mode: 'development',
+    entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[hash].js',
@@ -28,4 +29,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
     ],
+    devServer: {
+        port: 9000,
+        open: true, //  伺服器啟動後是否自動打開瀏覽器，預設為 false
+        hot: true, // 開啟 HMR 支持
+    },
 };
